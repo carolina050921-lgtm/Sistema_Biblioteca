@@ -1,0 +1,1047 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+    background: #f4f8fc;
+
+    color: #10233e;
+
+}
+
+
+/* =========================================
+   PANTALLA PRINCIPAL
+========================================= */
+
+.pantalla-principal {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.97) 0%,
+            rgba(248, 251, 255, 0.95) 47%,
+            rgba(231, 242, 252, 0.92) 100%
+        ),
+
+        url("../img/banner.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+
+/* =========================================
+   FRANJA SUPERIOR DECORATIVA
+========================================= */
+
+.pantalla-principal::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 290px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #07376e 0%,
+            #0863a7 65%,
+            #0787b5 100%
+        );
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 46%,
+        69% 67%,
+        39% 100%,
+        0 69%
+    );
+
+    z-index: 0;
+
+}
+
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+
+    width: 92%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding-top: 35px;
+
+}
+
+
+.institucion {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.logo {
+
+    width: 100px;
+
+    height: 100px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    background: white;
+
+    padding: 5px;
+
+    border: 4px solid rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(0, 0, 0, 0.18);
+
+}
+
+
+.datos-institucion {
+
+    color: white;
+
+}
+
+
+.instituto {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #ffd38b;
+
+}
+
+
+.datos-institucion h1 {
+
+    font-size: 31px;
+
+    line-height: 1.15;
+
+    letter-spacing: 1px;
+
+}
+
+
+.datos-institucion h1 span {
+
+    display: block;
+
+}
+
+
+.ubicacion {
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    color: #d5e9fa;
+
+}
+
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.contenido {
+
+    width: 88%;
+
+    max-width: 1250px;
+
+    margin:
+
+        160px auto
+        80px;
+
+    position: relative;
+
+    z-index: 4;
+
+    display: grid;
+
+    grid-template-columns:
+
+        1fr 0.92fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+}
+
+
+
+/* =========================================
+   PRESENTACIÓN IZQUIERDA
+========================================= */
+
+.presentacion {
+
+    padding: 15px;
+
+}
+
+
+.etiqueta {
+
+    display: inline-block;
+
+    color: #0b5c9e;
+
+    background: #e4f1fb;
+
+    padding:
+
+        8px 15px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+
+    margin-bottom: 17px;
+
+}
+
+
+.presentacion h2 {
+
+    color: #073567;
+
+    font-size: 67px;
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.presentacion h2 span {
+
+    color: #ed8500;
+
+}
+
+
+.descripcion {
+
+    max-width: 520px;
+
+    color: #637083;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+.linea {
+
+    width: 80px;
+
+    height: 4px;
+
+    border-radius: 5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #07559b,
+            #ee8b00
+        );
+
+    margin:
+
+        25px 0
+        18px;
+
+}
+
+
+.frase {
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    color: #0b4f8d;
+
+    font-size: 18px;
+
+}
+
+
+
+/* =========================================
+   LIBROS DECORATIVOS
+========================================= */
+
+.libros-decorativos {
+
+    margin-top: 35px;
+
+    width: 240px;
+
+}
+
+
+.libro {
+
+    height: 22px;
+
+    margin-bottom: 4px;
+
+    border-radius:
+
+        3px 9px
+        9px 3px;
+
+    box-shadow:
+
+        0 4px 8px
+        rgba(0, 0, 0, 0.12);
+
+}
+
+
+.libro1 {
+
+    width: 210px;
+
+    background: #063566;
+
+}
+
+
+.libro2 {
+
+    width: 230px;
+
+    margin-left: 10px;
+
+    background: #ef8b00;
+
+}
+
+
+.libro3 {
+
+    width: 195px;
+
+    background: #0879b6;
+
+}
+
+
+.libro4 {
+
+    width: 220px;
+
+    margin-left: 8px;
+
+    background: #174a7c;
+
+}
+
+
+
+/* =========================================
+   ÁREA DE ACCESOS
+========================================= */
+
+.accesos {
+
+    background:
+
+        rgba(255, 255, 255, 0.94);
+
+    padding: 38px;
+
+    border-radius: 24px;
+
+    border:
+
+        1px solid
+        rgba(17, 79, 132, 0.10);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(5, 50, 95, 0.17);
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.titulo-acceso {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.titulo-acceso > span {
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 29px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #e4f2ff,
+            #fff2df
+        );
+
+    border-radius: 15px;
+
+}
+
+
+.titulo-acceso p {
+
+    color: #e58300;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.titulo-acceso h3 {
+
+    color: #0a396b;
+
+    font-size: 23px;
+
+}
+
+
+
+/* =========================================
+   TARJETAS DE ACCESO
+========================================= */
+
+.tarjeta-acceso {
+
+    width: 100%;
+
+    min-height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    position: relative;
+
+    margin-bottom: 18px;
+
+    padding:
+
+        20px 23px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    border:
+
+        1px solid
+        #e0e9f2;
+
+    text-decoration: none;
+
+    transition:
+
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
+
+}
+
+
+.tarjeta-acceso:hover {
+
+    transform:
+
+        translateY(-5px);
+
+    box-shadow:
+
+        0 15px 30px
+        rgba(6, 61, 112, 0.15);
+
+}
+
+
+
+/* ADMINISTRADOR */
+
+.administrador:hover {
+
+    border-color: #075da5;
+
+}
+
+
+
+/* ESTUDIANTE */
+
+.estudiante:hover {
+
+    border-color: #ee8b00;
+
+}
+
+
+
+/* ICONO */
+
+.icono-acceso {
+
+    min-width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 29px;
+
+}
+
+
+.administrador
+.icono-acceso {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #dcebfa,
+            #edf6ff
+        );
+
+}
+
+
+.estudiante
+.icono-acceso {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0d7,
+            #fff8ee
+        );
+
+}
+
+
+
+/* TEXTO */
+
+.texto-acceso h4 {
+
+    color: #0c426f;
+
+    font-size: 20px;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.texto-acceso p {
+
+    color: #7b8796;
+
+    font-size: 13px;
+
+}
+
+
+/* FLECHA */
+
+.flecha {
+
+    margin-left: auto;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: #075ca4;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+
+}
+
+
+.estudiante .flecha {
+
+    background: #ec8b05;
+
+}
+
+
+.tarjeta-acceso:hover
+.flecha {
+
+    transform:
+
+        translateX(4px);
+
+}
+
+
+
+/* =========================================
+   MENSAJE SEGURIDAD
+========================================= */
+
+.mensaje-seguridad {
+
+    text-align: center;
+
+    margin-top: 26px;
+
+    color: #7d8a99;
+
+    font-size: 11px;
+
+}
+
+
+
+/* =========================================
+   CÍRCULOS DECORATIVOS
+========================================= */
+
+.circulo {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    z-index: 1;
+
+}
+
+
+.circulo-1 {
+
+    width: 260px;
+
+    height: 260px;
+
+    background:
+
+        rgba(238, 139, 0, 0.08);
+
+    right: -80px;
+
+    bottom: 100px;
+
+}
+
+
+.circulo-2 {
+
+    width: 150px;
+
+    height: 150px;
+
+    background:
+
+        rgba(7, 91, 162, 0.07);
+
+    left: -40px;
+
+    bottom: 150px;
+
+}
+
+
+.circulo-3 {
+
+    width: 90px;
+
+    height: 90px;
+
+    border:
+
+        18px solid
+        rgba(7, 91, 162, 0.06);
+
+    right: 35%;
+
+    bottom: 80px;
+
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    margin-top: auto;
+
+    position: relative;
+
+    z-index: 5;
+
+    min-height: 75px;
+
+    background: #062b54;
+
+    color: white;
+
+    padding:
+
+        15px 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+footer div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+footer strong {
+
+    font-size: 14px;
+
+}
+
+
+footer span {
+
+    color: #9fc3e1;
+
+    font-size: 11px;
+
+}
+
+
+footer p {
+
+    color: #a9bed2;
+
+    font-size: 11px;
+
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media
+(max-width: 950px) {
+
+    .contenido {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 50px;
+
+        margin-top: 140px;
+
+    }
+
+
+    .presentacion {
+
+        text-align: center;
+
+    }
+
+
+    .descripcion {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .linea {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .libros-decorativos {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+}
+
+
+
+@media
+(max-width: 650px) {
+
+    .pantalla-principal::before {
+
+        height: 255px;
+
+    }
+
+
+    .encabezado {
+
+        padding-top: 25px;
+
+    }
+
+
+    .logo {
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+
+    .datos-institucion h1 {
+
+        font-size: 19px;
+
+    }
+
+
+    .instituto {
+
+        font-size: 10px;
+
+    }
+
+
+    .contenido {
+
+        width: 92%;
+
+        margin-top: 125px;
+
+    }
+
+
+    .presentacion h2 {
+
+        font-size: 48px;
+
+    }
+
+
+    .descripcion {
+
+        font-size: 14px;
+
+    }
+
+
+    .accesos {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .titulo-acceso h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    .tarjeta-acceso {
+
+        padding: 15px;
+
+    }
+
+
+    .icono-acceso {
+
+        min-width: 52px;
+
+        height: 52px;
+
+    }
+
+
+    .texto-acceso h4 {
+
+        font-size: 16px;
+
+    }
+
+
+    .texto-acceso p {
+
+        font-size: 11px;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 8px;
+
+    }
+
+}

@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Biblioteca CMVO</title>
+
+    <!-- CSS DEL DASHBOARD -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+
+
+<body>
+
+<div class="dashboard">
+
+
+    <!-- ===================================== -->
+    <!-- MENÚ LATERAL -->
+    <!-- ===================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+
+            <img
+                src="../img/logo.jpeg"
+                alt="Logo IESTP CMVO"
+            >
+
+            <div>
+
+                <h2>Biblioteca</h2>
+
+                <span>CMVO</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="menu-titulo">
+            PANEL PRINCIPAL
+        </div>
+
+
+        <nav class="menu-lateral">
+
+
+            <!-- DASHBOARD -->
+
+            <a href="dashboard_administrador.html"
+               class="menu-item activo">
+
+                <span class="menu-icono">🏠</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+
+            <div class="menu-titulo seccion">
+                GESTIÓN
+            </div>
+
+
+
+            <!-- LIBROS -->
+
+            <a href="libros.html"
+               class="menu-item">
+
+                <span class="menu-icono">📚</span>
+
+                <span>Libros</span>
+
+            </a>
+
+
+
+            <!-- NUEVO LIBRO -->
+
+            <a href="nuevo_libro.html"
+               class="menu-item submenu">
+
+                <span class="menu-icono">＋</span>
+
+                <span>Registrar libro</span>
+
+            </a>
+
+
+
+            <!-- USUARIOS -->
+
+            <a href="usuarios.html"
+               class="menu-item">
+
+                <span class="menu-icono">👥</span>
+
+                <span>Usuarios</span>
+
+            </a>
+
+
+
+            <!-- NUEVO USUARIO -->
+
+            <a href="registrar_usuario.html"
+               class="menu-item submenu">
+
+                <span class="menu-icono">＋</span>
+
+                <span>Registrar usuario</span>
+
+            </a>
+
+
+            <a href="lista_estudiantes.html"
+               class="menu-item submenu">
+
+                <span class="menu-icono">•</span>
+
+                <span>Lista de estudiantes</span>
+
+            </a>
+
+
+            <a href="lista_docentes.html"
+               class="menu-item submenu">
+
+                <span class="menu-icono">•</span>
+
+                <span>Lista de docentes</span>
+
+            </a>
+
+
+            <a href="prestamo_usuario_externo.html?tipo=administrativo"
+               class="menu-item submenu">
+
+                <span class="menu-icono">•</span>
+
+                <span>Personal administrativo</span>
+
+            </a>
+
+
+            <!-- PRESTAMOS -->
+
+            <a href="prestamos.html"
+               class="menu-item">
+
+                <span class="menu-icono">📖</span>
+
+                <span>Préstamos</span>
+
+            </a>
+
+
+
+            <!-- NUEVO PRESTAMO -->
+
+            <a href="registrar_prestamo.html"
+               class="menu-item submenu">
+
+                <span class="menu-icono">＋</span>
+
+                <span>Registrar préstamo</span>
+
+            </a>
+
+
+            <a href="lista_prestamos.html"
+               class="menu-item submenu">
+
+                <span class="menu-icono">•</span>
+
+                <span>Lista de préstamos</span>
+
+            </a>
+
+
+            <a href="prestamos_solicitados.html"
+               class="menu-item submenu">
+
+                <span class="menu-icono">•</span>
+
+                <span>Préstamos solicitados</span>
+
+            </a>
+
+
+
+            <!-- DEVOLUCIONES -->
+
+            <a href="devoluciones.html"
+               class="menu-item">
+
+                <span class="menu-icono">↩️</span>
+
+                <span>Devoluciones</span>
+
+            </a>
+
+
+
+            <div class="menu-titulo seccion">
+                INFORMACIÓN
+            </div>
+
+
+
+            <!-- REPORTES -->
+
+            <a href="reportes.html"
+               class="menu-item">
+
+                <span class="menu-icono">📊</span>
+
+                <span>Reportes</span>
+
+            </a>
+
+
+
+            <!-- PRÉSTAMOS POR VENCER -->
+
+            <a href="prestamos_por_vencer.html"
+               class="menu-item">
+
+                <span class="menu-icono">⚠️</span>
+
+                <span>Préstamos por vencer</span>
+
+            </a>
+
+
+
+            <!-- AULA VIRTUAL -->
+
+            <a href="https://iestpcmvo.bibliotecalatina.com/login"
+               class="menu-item" target="_blank" rel="noopener noreferrer">
+
+                <span class="menu-icono">💻</span>
+
+                <span>Aula virtual</span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- CERRAR SESIÓN -->
+
+        <div class="cerrar-sesion">
+
+            <a href="login_administrador.html" id="cerrarSesionAdministrador">
+
+                <span>🚪</span>
+
+                Cerrar sesión
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ===================================== -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ===================================== -->
+
+    <main class="contenido-dashboard">
+
+
+        <!-- ================================= -->
+        <!-- CABECERA -->
+        <!-- ================================= -->
+
+        <header class="cabecera">
+
+            <div>
+
+                <p class="ruta">
+                    PANEL PRINCIPAL
+                </p>
+
+                <h1>Panel principal</h1>
+
+            </div>
+
+
+
+            <div class="perfil">
+
+                <div class="avatar">
+                    AD
+                </div>
+
+
+                <div class="perfil-datos">
+
+                    <strong>
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Biblioteca CMVO
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- BIENVENIDA -->
+        <!-- ================================= -->
+
+        <section class="bienvenida">
+
+            <div>
+
+                <span class="fecha">
+                    Sistema de Gestión Bibliotecaria
+                </span>
+
+                <h2>
+                    <span id="saludoAdministrador">Buenos días</span>,
+                    <strong>Administrador</strong>
+                </h2>
+
+                <p>
+                    Aquí tienes un resumen general del estado
+                    de la biblioteca del IESTP Contralmirante
+                    Manuel Villar Olivera.
+                </p>
+
+            </div>
+
+
+
+            <a href="registrar_prestamo.html"
+               class="btn-principal">
+
+                ＋ Registrar préstamo
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- TARJETAS ESTADÍSTICAS -->
+        <!-- ================================= -->
+
+        <section class="estadisticas">
+
+
+            <!-- LIBROS -->
+
+            <div class="tarjeta-estadistica">
+
+                <div class="barra azul"></div>
+
+                <div class="icono estadistica-azul">
+
+                    📚
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total de libros
+                    </span>
+
+                    <h3 id="totalLibrosAdministrador">248</h3>
+
+                    <p>
+                        Catálogo registrado
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- USUARIOS -->
+
+            <div class="tarjeta-estadistica">
+
+                <div class="barra celeste"></div>
+
+                <div class="icono estadistica-celeste">
+
+                    👥
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Usuarios
+                    </span>
+
+                    <h3 id="totalUsuariosAdministrador">126</h3>
+
+                    <p>
+                        Usuarios registrados
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRESTAMOS -->
+
+            <div class="tarjeta-estadistica">
+
+                <div class="barra naranja"></div>
+
+                <div class="icono estadistica-naranja">
+
+                    📖
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Préstamos activos
+                    </span>
+
+                    <h3 id="totalPrestamosAdministrador">18</h3>
+
+                    <p>
+                        Actualmente prestados
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VENCIDOS -->
+
+            <div class="tarjeta-estadistica">
+
+                <div class="barra rojo"></div>
+
+                <div class="icono estadistica-rojo">
+
+                    ⚠️
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Préstamos vencidos
+                    </span>
+
+                    <h3 id="totalVencidosAdministrador">3</h3>
+
+                    <p>
+                        Pendientes de devolución
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- CONTENIDO CENTRAL -->
+        <!-- ================================= -->
+
+        <section class="paneles">
+
+
+            <!-- LIBROS POR CATEGORÍA -->
+
+            <div class="panel categorias">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            Libros por categoría
+                        </h3>
+
+                        <p>
+                            Distribución del catálogo
+                        </p>
+
+                    </div>
+
+
+                    <a href="libros.html">
+                        Ver todos
+                    </a>
+
+                </div>
+
+
+
+                <div class="categoria">
+
+
+                    <div class="categoria-info">
+
+                        <span>Programación</span>
+
+                        <strong>82</strong>
+
+                    </div>
+
+
+                    <div class="progreso">
+
+                        <div
+                            class="progreso-barra progreso-85">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="categoria">
+
+                    <div class="categoria-info">
+
+                        <span>
+                            Redes y comunicaciones
+                        </span>
+
+                        <strong>64</strong>
+
+                    </div>
+
+
+                    <div class="progreso">
+
+                        <div
+                            class="progreso-barra progreso-68">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="categoria">
+
+                    <div class="categoria-info">
+
+                        <span>
+                            Base de datos
+                        </span>
+
+                        <strong>48</strong>
+
+                    </div>
+
+
+                    <div class="progreso">
+
+                        <div
+                            class="progreso-barra naranja-barra progreso-52">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="categoria">
+
+                    <div class="categoria-info">
+
+                        <span>
+                            Sistemas operativos
+                        </span>
+
+                        <strong>32</strong>
+
+                    </div>
+
+
+                    <div class="progreso">
+
+                        <div
+                            class="progreso-barra celeste-barra progreso-36">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="categoria">
+
+                    <div class="categoria-info">
+
+                        <span>
+                            Otros
+                        </span>
+
+                        <strong>22</strong>
+
+                    </div>
+
+
+                    <div class="progreso">
+
+                        <div
+                            class="progreso-barra gris-barra progreso-24">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACCIONES RÁPIDAS -->
+
+            <div class="panel acciones">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            Acciones rápidas
+                        </h3>
+
+                        <p>
+                            Accede a las funciones principales
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="acciones-grid">
+
+
+                    <a href="nuevo_libro.html"
+                       class="accion">
+
+                        <span>📘</span>
+
+                        <strong>
+                            Nuevo libro
+                        </strong>
+
+                        <small>
+                            Registrar ejemplar
+                        </small>
+
+                    </a>
+
+
+
+                    <a href="registrar_usuario.html"
+                       class="accion">
+
+                        <span>👤</span>
+
+                        <strong>
+                            Nuevo usuario
+                        </strong>
+
+                        <small>
+                            Registrar lector
+                        </small>
+
+                    </a>
+
+
+
+                    <a href="registrar_prestamo.html"
+                       class="accion">
+
+                        <span>📖</span>
+
+                        <strong>
+                            Préstamo
+                        </strong>
+
+                        <small>
+                            Registrar préstamo
+                        </small>
+
+                    </a>
+
+
+
+                    <a href="devoluciones.html"
+                       class="accion">
+
+                        <span>↩️</span>
+
+                        <strong>
+                            Devolución
+                        </strong>
+
+                        <small>
+                            Registrar devolución
+                        </small>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- PRÉSTAMOS RECIENTES -->
+        <!-- ================================= -->
+
+        <section class="panel movimientos">
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h3>
+                        Préstamos recientes
+                    </h3>
+
+                    <p>
+                        Últimos movimientos registrados
+                    </p>
+
+                </div>
+
+
+                <a href="lista_prestamos.html">
+                    Ver todos
+                </a>
+
+            </div>
+
+
+
+            <div class="tabla-contenedor">
+
+                <table id="tablaPrestamosAdministrador">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Código</th>
+
+                            <th>Usuario</th>
+
+                            <th>Libro</th>
+
+                            <th>Fecha préstamo</th>
+
+                            <th>Fecha devolución</th>
+
+                            <th>Estado</th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody id="cuerpoPrestamosAdministrador">
+
+
+                        <tr>
+
+                            <td>
+                                PR-001
+                            </td>
+
+                            <td>
+
+                                <div class="usuario-tabla">
+
+                                    <span class="avatar-mini">
+                                        JS
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Jessica Silva
+                                        </strong>
+
+                                        <small>
+                                            Estudiante
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Programación Web
+                            </td>
+
+                            <td>
+                                28/08/2026
+                            </td>
+
+                            <td>
+                                04/09/2026
+                            </td>
+
+                            <td>
+
+                                <span class="estado activo">
+                                    Activo
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                PR-002
+                            </td>
+
+                            <td>
+
+                                <div class="usuario-tabla">
+
+                                    <span class="avatar-mini">
+                                        BA
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Brenda Alemán
+                                        </strong>
+
+                                        <small>
+                                            Estudiante
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Base de Datos MySQL
+                            </td>
+
+                            <td>
+                                27/08/2026
+                            </td>
+
+                            <td>
+                                03/09/2026
+                            </td>
+
+                            <td>
+
+                                <span class="estado activo">
+                                    Activo
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                PR-003
+                            </td>
+
+                            <td>
+
+                                <div class="usuario-tabla">
+
+                                    <span class="avatar-mini">
+                                        CA
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Carlos Acosta
+                                        </strong>
+
+                                        <small>
+                                            Estudiante
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Redes de Computadoras
+                            </td>
+
+                            <td>
+                                20/08/2026
+                            </td>
+
+                            <td>
+                                27/08/2026
+                            </td>
+
+                            <td>
+
+                                <span class="estado vencido">
+                                    Vencido
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- FOOTER -->
+        <!-- ================================= -->
+
+        <footer class="footer-dashboard">
+
+            <p>
+                © 2026 Biblioteca CMVO
+            </p>
+
+            <span>
+                IESTP Contralmirante Manuel Villar Olivera
+                · Zorritos - Tumbes
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="../js/menu_desplegable.js"></script>
+<script src="../js/dashboard_administrador.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+.mensaje-correcto {
+    display: none;
+    color: #16823b;
+    margin: 12px 0;
+    font-size: 14px;
+    font-weight: bold;
+}

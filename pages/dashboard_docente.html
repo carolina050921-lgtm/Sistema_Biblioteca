@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Docente | Biblioteca Virtual</title>
+    <link rel="stylesheet" href="../css/dashboard_docente.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fa-solid fa-book-open"></i></div>
+            <div><h2>Biblioteca</h2><span>Virtual CMVO</span></div>
+        </div>
+        <div class="perfil-docente">
+            <div class="avatar"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div><h4 id="nombrePerfil">Docente CMVO</h4><p>Docente</p></div>
+        </div>
+        <nav class="menu">
+            <a href="dashboard_docente.html" class="activo"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+            <a href="https://iestpcmvo.bibliotecalatina.com/login" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open-reader"></i><span>Biblioteca virtual</span></a>
+            <a href="buscar_libros.html?perfil=docente"><i class="fa-solid fa-magnifying-glass"></i><span>Buscar libros</span></a>
+            <a href="#misPrestamos"><i class="fa-solid fa-hand-holding"></i><span>Mis préstamos</span></a>
+            <a href="#misSolicitudes"><i class="fa-solid fa-clipboard-list"></i><span>Mis solicitudes</span></a>
+            <a href="#"><i class="fa-solid fa-clock-rotate-left"></i><span>Historial</span></a>
+        </nav>
+        <div class="cerrar-sesion"><a href="login_docente.html" id="cerrarSesionDocente"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a></div>
+    </aside>
+
+    <main class="contenido">
+        <header class="header">
+            <div><h1>Biblioteca Virtual</h1><p>Instituto de Educación Superior Tecnológico</p></div>
+            <div class="usuario-header">
+                <div class="notificacion"><i class="fa-solid fa-bell"></i><span id="totalAlertas">0</span></div>
+                <div class="usuario"><div class="usuario-icon" id="inicialesDocente">DC</div><div><strong id="nombreHeader">Docente CMVO</strong><p>Docente</p></div></div>
+            </div>
+        </header>
+
+        <section class="bienvenida">
+            <div class="bienvenida-texto">
+                <span class="etiqueta"><i class="fa-solid fa-chalkboard-user"></i> Portal del docente</span>
+                <h2>¡Hola, <span id="nombreBienvenida">Docente</span>! 👋</h2>
+                <p>Consulta material bibliográfico para tus clases, revisa tus préstamos y descubre recursos que apoyen tu labor académica.</p>
+                <a href="buscar_libros.html?perfil=docente" class="btn-buscar"><i class="fa-solid fa-magnifying-glass"></i> Buscar libros</a>
+            </div>
+            <div class="bienvenida-icono"><i class="fa-solid fa-book-open-reader"></i></div>
+        </section>
+
+        <section class="estadisticas">
+            <div class="tarjeta"><div class="icono azul"><i class="fa-solid fa-book"></i></div><div><p>Libros disponibles</p><h3 id="librosDisponibles">0</h3></div></div>
+            <div class="tarjeta"><div class="icono verde"><i class="fa-solid fa-book-open"></i></div><div><p>Mis préstamos activos</p><h3 id="prestamosActivos">0</h3></div></div>
+            <div class="tarjeta"><div class="icono naranja"><i class="fa-solid fa-calendar-days"></i></div><div><p>Por devolver</p><h3 id="porDevolver">0</h3></div></div>
+            <div class="tarjeta"><div class="icono morado"><i class="fa-solid fa-clock-rotate-left"></i></div><div><p>Historial de préstamos</p><h3 id="totalHistorial">0</h3></div></div>
+        </section>
+
+        <section class="seccion" id="misSolicitudes">
+            <div class="titulo-seccion"><div><h2>Mis solicitudes de préstamo</h2><p>Revisa el estado de tus solicitudes y la fecha de recojo en biblioteca.</p></div></div>
+            <div class="tabla-contenedor"><table><thead><tr><th>Solicitud</th><th>Libro</th><th>Fecha solicitud</th><th>Fecha recojo</th><th>Estado</th></tr></thead><tbody id="tablaSolicitudesDocente" aria-live="polite"></tbody></table></div>
+        </section>
+
+        <section class="seccion" id="misPrestamos">
+            <div class="titulo-seccion"><div><h2>Mis préstamos actuales</h2><p>Material bibliográfico que tienes actualmente en préstamo.</p></div></div>
+            <div class="tabla-contenedor"><table><thead><tr><th>Libro</th><th>Ejemplar</th><th>Fecha préstamo</th><th>Fecha devolución</th><th>Estado</th></tr></thead><tbody id="tablaPrestamosDocente"></tbody></table></div>
+        </section>
+
+        <section class="seccion">
+            <div class="titulo-seccion"><div><h2>Libros recomendados</h2><p>Material disponible para apoyar la enseñanza, investigación y preparación de clases.</p></div><a href="buscar_libros.html?perfil=docente">Ver más</a></div>
+            <div class="contenedor-libros" id="librosRecomendados"></div>
+        </section>
+    </main>
+
+    <div class="modal-libro" id="modalLibro" aria-hidden="true">
+        <div class="modal-contenido" role="dialog" aria-modal="true" aria-labelledby="detalleTitulo">
+            <button type="button" class="modal-cerrar" id="cerrarDetalle" aria-label="Cerrar detalle">&times;</button>
+            <div class="detalle-portada" id="detallePortada"><i class="fa-solid fa-book-open"></i></div>
+            <div class="detalle-informacion">
+                <span class="detalle-categoria" id="detalleCategoria">Categoría</span>
+                <h2 id="detalleTitulo">Título del libro</h2>
+                <p class="detalle-autor" id="detalleAutor">Autor</p>
+                <p id="detalleDescripcion"></p>
+
+                <dl class="detalle-datos">
+                    <div><dt>Código</dt><dd id="detalleCodigo">-</dd></div>
+                    <div><dt>ISBN</dt><dd id="detalleIsbn">-</dd></div>
+                    <div><dt>Editorial</dt><dd id="detalleEditorial">-</dd></div>
+                    <div><dt>Año</dt><dd id="detalleAnio">-</dd></div>
+                    <div><dt>Ubicación</dt><dd id="detalleUbicacion">-</dd></div>
+                    <div><dt>Disponibles</dt><dd id="detalleDisponibles">0</dd></div>
+                </dl>
+
+                <div class="detalle-acciones" id="accionesDetalle">
+                    <button type="button" class="btn-secundario" id="cancelarDetalle">Cerrar</button>
+                    <button type="button" class="btn-solicitar" id="mostrarSolicitud"><i class="fa-solid fa-hand-holding"></i> Solicitar préstamo</button>
+                </div>
+
+                <form id="formSolicitudDocente" class="form-solicitud" novalidate>
+                    <h3>Solicitud de préstamo</h3>
+                    <p>Confirma los datos para enviar tu solicitud a la biblioteca.</p>
+                    <label for="fechaRecojo">Fecha de recojo *</label>
+                    <input type="date" id="fechaRecojo" required>
+                    <label for="programaSolicitud">Programa de estudios *</label>
+                    <select id="programaSolicitud" required><option value="">Selecciona tu programa</option><option>Arquitectura de Plataformas y Servicios de TI</option><option>Acuicultura y Procesamiento Pesquero</option><option>Mecatrónica Automotriz</option><option>Enfermería Técnica</option></select>
+                    <label for="semestreSolicitud">Semestre *</label>
+                    <select id="semestreSolicitud" required><option value="">Selecciona el semestre</option><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option></select>
+                    <label for="motivoSolicitud">Uso del material *</label>
+                    <select id="motivoSolicitud" required>
+                        <option value="">Seleccione una opción</option>
+                        <option>Preparación de clases</option>
+                        <option>Investigación académica</option>
+                        <option>Actualización profesional</option>
+                        <option>Otro uso académico</option>
+                    </select>
+                    <label for="observacionSolicitud">Observación</label>
+                    <textarea id="observacionSolicitud" rows="3" maxlength="250" placeholder="Información adicional para la bibliotecaria (opcional)"></textarea>
+                    <p class="mensaje-solicitud" id="mensajeSolicitud" aria-live="polite"></p>
+                    <div class="detalle-acciones">
+                        <button type="button" class="btn-secundario" id="volverDetalle">Volver</button>
+                        <button type="submit" class="btn-solicitar"><i class="fa-solid fa-paper-plane"></i> Enviar solicitud</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../js/catalogo_portadas.js"></script>
+    <script src="../js/catalogo_actual.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/solicitudes_prestamo.js"></script>
+    <script src="../js/codigos_solicitud.js"></script>
+    <script src="../js/dashboard_docente.js"></script>
+</body>
+</html>

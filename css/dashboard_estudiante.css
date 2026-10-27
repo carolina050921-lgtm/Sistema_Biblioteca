@@ -1,0 +1,624 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #263238;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #e4e8ef;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eceff3;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #174f9c, #2785dc);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 21px;
+}
+
+.logo-container h2 {
+    font-size: 18px;
+    color: #163b69;
+}
+
+.logo-container span {
+    font-size: 12px;
+    color: #7c8998;
+}
+
+
+/* PERFIL */
+
+.perfil-estudiante {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    padding: 12px;
+    background: #f4f8ff;
+    border-radius: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #dcecff;
+    color: #1965b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil-estudiante h4 {
+    font-size: 13px;
+}
+
+.perfil-estudiante p {
+    font-size: 11px;
+    margin-top: 3px;
+    color: #748191;
+}
+
+
+/* MENÚ */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #66717e;
+    padding: 13px 15px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a i {
+    width: 20px;
+}
+
+.menu a:hover {
+    background: #eef5ff;
+    color: #1765b5;
+}
+
+.menu .activo {
+    color: #1765b5;
+    background: #e9f3ff;
+    font-weight: bold;
+}
+
+.cerrar-sesion {
+    margin-top: auto;
+}
+
+.cerrar-sesion a {
+    text-decoration: none;
+    color: #e44a4a;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 12px;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.contenido {
+    margin-left: 250px;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    height: 82px;
+    background: white;
+    border-bottom: 1px solid #e4e8ee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.header h1 {
+    font-size: 19px;
+    color: #243e5b;
+}
+
+.header p {
+    font-size: 12px;
+    color: #87909b;
+    margin-top: 4px;
+}
+
+.usuario-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.notificacion {
+    position: relative;
+    font-size: 19px;
+    color: #536170;
+}
+
+.notificacion span {
+    position: absolute;
+    top: -8px;
+    right: -9px;
+    background: #e83c3c;
+    color: white;
+    width: 17px;
+    height: 17px;
+    font-size: 9px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.usuario-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #1263b4, #2b95db);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.usuario strong {
+    font-size: 13px;
+}
+
+.usuario p {
+    font-size: 11px;
+}
+
+
+/* =========================================
+   BIENVENIDA
+========================================= */
+
+.bienvenida {
+    margin: 30px 40px;
+    padding: 35px 40px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #0d4e92, #1681ca);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 28px rgba(20, 91, 155, 0.16);
+}
+
+.bienvenida-texto {
+    max-width: 650px;
+}
+
+.etiqueta {
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 7px 13px;
+    border-radius: 20px;
+}
+
+.bienvenida h2 {
+    margin-top: 17px;
+    font-size: 29px;
+}
+
+.bienvenida p {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e7f3ff;
+}
+
+.btn-buscar {
+    display: inline-block;
+    margin-top: 20px;
+    background: white;
+    color: #1164ab;
+    padding: 12px 19px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.btn-buscar i {
+    margin-right: 7px;
+}
+
+.bienvenida-icono {
+    font-size: 100px;
+    opacity: 0.18;
+}
+
+
+/* =========================================
+   TARJETAS ESTADÍSTICAS
+========================================= */
+
+.estadisticas {
+    margin: 0 40px 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.icono {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.azul {
+    background: #e1efff;
+    color: #2478ce;
+}
+
+.verde {
+    background: #e5f7ed;
+    color: #24985b;
+}
+
+.naranja {
+    background: #fff2df;
+    color: #e28a16;
+}
+
+.morado {
+    background: #f0e6ff;
+    color: #8151cc;
+}
+
+.tarjeta p {
+    font-size: 12px;
+    color: #7d8895;
+}
+
+.tarjeta h3 {
+    font-size: 25px;
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.seccion {
+    margin: 30px 40px;
+}
+
+.titulo-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.titulo-seccion h2 {
+    font-size: 19px;
+    color: #253b54;
+}
+
+.titulo-seccion p {
+    color: #89939e;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.titulo-seccion a {
+    color: #1c72c4;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   TABLA
+========================================= */
+
+.tabla-contenedor {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f9fafc;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 11px;
+    color: #7f8995;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 16px 20px;
+    border-top: 1px solid #edf0f4;
+    font-size: 13px;
+}
+
+.libro-tabla {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-libro {
+    width: 39px;
+    height: 45px;
+    border-radius: 7px;
+    background: #e4f0ff;
+    color: #216fb9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.libro-tabla p {
+    font-size: 11px;
+    color: #8a949e;
+    margin-top: 4px;
+}
+
+.estado {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.vigente {
+    background: #e3f7ec;
+    color: #248951;
+}
+
+.proximo {
+    background: #fff1dc;
+    color: #cf7c15;
+}
+
+
+/* =========================================
+   LIBROS
+========================================= */
+
+.contenedor-libros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.libro-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.libro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.portada {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 58px;
+    color: white;
+}
+
+.portada1 {
+    background: linear-gradient(135deg, #2365a9, #27a2d7);
+}
+
+.portada2 {
+    background: linear-gradient(135deg, #17815e, #41bb82);
+}
+
+.portada3 {
+    background: linear-gradient(135deg, #7549aa, #a66bd5);
+}
+
+.portada4 {
+    background: linear-gradient(135deg, #e27b23, #f5ad42);
+}
+
+.info-libro {
+    padding: 17px;
+}
+
+.categoria {
+    background: #eaf3ff;
+    color: #246bb0;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.info-libro h3 {
+    font-size: 14px;
+    margin-top: 13px;
+}
+
+.info-libro p {
+    font-size: 11px;
+    color: #828d99;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+.estrellas {
+    color: #f3b51b;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.info-libro button {
+    margin-top: 14px;
+    width: 100%;
+    border: none;
+    background: #eef5ff;
+    color: #1964ac;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.info-libro button:hover {
+    background: #1964ac;
+    color: white;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width: 1100px) {
+
+    .estadisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor-libros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media(max-width: 700px) {
+
+    .sidebar {
+        width: 75px;
+    }
+
+    .logo-container div:last-child,
+    .perfil-estudiante div:last-child,
+    .menu span {
+        display: none;
+    }
+
+    .contenido {
+        margin-left: 75px;
+    }
+
+    .header {
+        padding: 0 20px;
+    }
+
+    .bienvenida,
+    .seccion {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .estadisticas {
+        margin-left: 20px;
+        margin-right: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-libros {
+        grid-template-columns: 1fr;
+    }
+
+    .bienvenida-icono {
+        display: none;
+    }
+
+}
+.estado.pendiente{background:#fff1d6;color:#a66300}.estado.aprobada{background:#dcf6e5;color:#12813a}.tabla-vacia{text-align:center;color:#89939e;padding:32px}
+

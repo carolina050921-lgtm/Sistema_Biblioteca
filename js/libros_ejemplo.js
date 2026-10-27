@@ -1,0 +1,6 @@
+window.bibliotecaEjemplosEspecialidades = [
+        { codigo: "DEMO-ENF-001", titulo: "Fundamentos de enfermería", categoria: "Enfermería", resumen: "Libro de ejemplo sobre cuidados básicos del paciente, signos vitales, higiene y seguridad en la atención de enfermería.", ubicacion: "Estante E-01", ejemplares: 5, disponibles: 4 },
+        { codigo: "DEMO-ENF-002", titulo: "Anatomía y fisiología para enfermería", categoria: "Enfermería", resumen: "Libro de ejemplo para estudiar los sistemas del cuerpo humano y su aplicación en el cuidado del paciente.", ubicacion: "Estante E-02", ejemplares: 4, disponibles: 3 },
+        { codigo: "DEMO-MEC-001", titulo: "Introducción a la mecatrónica", categoria: "Mecatrónica", resumen: "Libro de ejemplo sobre sensores, actuadores, circuitos y automatización de sistemas mecánicos y electrónicos.", ubicacion: "Estante M-01", ejemplares: 4, disponibles: 2 },
+        { codigo: "DEMO-ARQ-001", titulo: "Diseño arquitectónico y planos", categoria: "Arquitectura", resumen: "Libro de ejemplo sobre representación de espacios, lectura de planos, escalas y fundamentos del diseño arquitectónico.", ubicacion: "Estante A-01", ejemplares: 3, disponibles: 2 }
+    ];

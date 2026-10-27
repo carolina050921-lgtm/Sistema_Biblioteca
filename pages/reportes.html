@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes | Biblioteca CMVO</title>
+    <link rel="stylesheet" href="../css/reportes.css">
+</head>
+<body>
+<div class="pagina">
+    <aside class="sidebar">
+        <div class="marca"><img src="../img/logo.jpeg" alt="Logo"><div><strong>Biblioteca</strong><span>CMVO</span></div></div>
+        <nav class="menu">
+            <div class="menu-titulo">PANEL PRINCIPAL</div><a href="dashboard_administrador.html">🏠 <span>Panel principal</span></a>
+            <div class="menu-titulo seccion">GESTIÓN</div>
+            <a href="libros.html">📚 <span>Libros</span></a><a class="sub" href="nuevo_libro.html">＋ <span>Registrar libro</span></a>
+            <a href="usuarios.html">👥 <span>Usuarios</span></a><a class="sub" href="registrar_usuario.html">● <span>Registrar usuario</span></a><a class="sub" href="lista_estudiantes.html">● <span>Lista de estudiantes</span></a><a class="sub" href="lista_docentes.html">● <span>Lista de docentes</span></a><a class="sub" href="prestamo_usuario_externo.html?tipo=administrativo">● <span>Personal administrativo</span></a>
+            <a href="prestamos.html">📖 <span>Préstamos</span></a><a class="sub" href="registrar_prestamo.html">● <span>Registrar préstamo</span></a><a class="sub" href="lista_prestamos.html">● <span>Lista de préstamos</span></a><a class="sub" href="prestamos_solicitados.html">● <span>Préstamos solicitados</span></a>
+            <a href="devoluciones.html">↩️ <span>Devoluciones</span></a>
+            <div class="menu-titulo seccion">INFORMACIÓN</div><a class="activo" href="reportes.html">📊 <span>Reportes</span></a><a href="prestamos_por_vencer.html">⚠️ <span>Préstamos por vencer</span></a><a href="#">💻 <span>Aula virtual</span></a>
+        </nav>
+        <a class="cerrar" href="login_administrador.html">🚪 &nbsp; Cerrar sesión</a>
+    </aside>
+
+    <main>
+        <header class="hero"><div><h1>Reportes de biblioteca</h1><p>Consulta, filtra, descarga e imprime información para el control de la gestión bibliotecaria.</p></div><div class="perfil"><div class="avatar">👤</div><div><strong>Administrador</strong><small>Biblioteca</small></div></div></header>
+        <div class="migas">⌂ &nbsp; Panel principal &nbsp;›&nbsp; <strong>Reportes</strong></div>
+
+        <section class="resumen">
+            <div class="tarjeta"><span>Préstamos registrados</span><strong id="totalPrestamos">0</strong></div>
+            <div class="tarjeta"><span>Préstamos activos</span><strong id="totalActivos">0</strong></div>
+            <div class="tarjeta alerta"><span>Préstamos vencidos</span><strong id="totalVencidos">0</strong></div>
+            <div class="tarjeta"><span>Devoluciones registradas</span><strong id="totalDevueltos">0</strong></div>
+        </section>
+
+        <section class="panel controles no-imprimir">
+            <div class="cabecera-panel"><div><h2>⚙️ Generar reporte</h2><p>Seleccione el tipo de reporte y el periodo que desea consultar.</p></div></div>
+            <div class="filtros">
+                <div class="campo"><label for="tipoReporte">Tipo de reporte</label><select id="tipoReporte"><option value="prestamos">Préstamos realizados</option><option value="pendientes">Préstamos pendientes y vencidos</option><option value="usuarios">Usuarios con libros pendientes</option><option value="solicitados">Libros más solicitados</option><option value="inventario">Inventario general de libros</option><option value="devoluciones">Devoluciones realizadas</option></select></div>
+                <div class="campo"><label for="fechaDesde">Desde</label><input id="fechaDesde" type="date"></div>
+                <div class="campo"><label for="fechaHasta">Hasta</label><input id="fechaHasta" type="date"></div>
+                <div class="campo"><label for="tipoUsuario">Tipo de usuario</label><select id="tipoUsuario"><option value="">Todos</option><option>Estudiante</option><option>Docente</option><option>Personal administrativo</option><option>Visitante autorizado</option></select></div>
+            </div>
+            <div class="acciones"><button id="btnGenerar" class="boton principal" type="button">🔎 Generar reporte</button><button id="btnPdf" class="boton secundario" type="button">🖨 Imprimir o guardar PDF</button></div>
+        </section>
+
+        <section class="panel reporte" id="areaReporte">
+            <div class="encabezado-reporte"><div><img src="../img/logo.jpeg" alt="Logo"><div><small>IESTP Contralmirante Manuel Villar Olivera</small><h2 id="tituloReporte">Reporte de préstamos realizados</h2><p id="periodoReporte">Todos los registros disponibles</p></div></div><div class="fecha-generacion">Generado: <strong id="fechaGeneracion"></strong></div></div>
+            <div id="notaReporte" class="nota"></div>
+            <div class="tabla"><table><thead id="cabeceraTabla"></thead><tbody id="cuerpoTabla"></tbody></table></div>
+            <div class="pie-reporte"><span id="cantidadResultados">0 registros</span><span>Biblioteca CMVO</span></div>
+        </section>
+    </main>
+</div>
+<script src="../js/menu_desplegable.js"></script>
+<script src="../js/reportes.js"></script>
+</body>
+</html>
+

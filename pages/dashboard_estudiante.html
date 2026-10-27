@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Estudiante | Biblioteca Virtual</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/dashboard_estudiante.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- BARRA LATERAL -->
+    <!-- ===================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo-container">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div>
+                <h2>Biblioteca</h2>
+                <span>Virtual CMVO</span>
+            </div>
+
+        </div>
+
+        <!-- DATOS DEL ESTUDIANTE -->
+
+        <div class="perfil-estudiante">
+
+            <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <div>
+                <h4 id="nombrePerfilEstudiante">Jessica Silva</h4>
+                <p>Estudiante</p>
+            </div>
+
+        </div>
+
+        <!-- MENÚ -->
+
+        <nav class="menu">
+
+            <a href="#" class="activo">
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
+            </a>
+
+            <a href="https://iestpcmvo.bibliotecalatina.com/login" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span>Biblioteca virtual</span>
+            </a>
+
+            <a href="buscar_libros.html?perfil=estudiante">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Buscar libros</span>
+            </a>
+
+            <a href="#misPrestamos">
+                <i class="fa-solid fa-hand-holding"></i>
+                <span>Mis préstamos</span>
+            </a>
+            <a href="#misSolicitudes"><i class="fa-solid fa-clipboard-list"></i><span>Mis solicitudes</span></a>
+
+            <a href="#">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Historial</span>
+            </a>
+
+        </nav>
+
+        <!-- CERRAR SESIÓN -->
+
+        <div class="cerrar-sesion">
+
+            <a href="login_estudiante.html" id="cerrarSesionEstudiante">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ===================================== -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ===================================== -->
+
+    <main class="contenido">
+
+        <!-- BARRA SUPERIOR -->
+
+        <header class="header">
+
+            <div>
+                <h1>Biblioteca Virtual</h1>
+                <p>Instituto de Educación Superior Tecnológico</p>
+            </div>
+
+            <div class="usuario-header">
+
+                <div class="notificacion">
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="alertasEstudiante">2</span>
+                </div>
+
+                <div class="usuario">
+
+                    <div class="usuario-icon" id="inicialesEstudiante">
+                        JS
+                    </div>
+
+                    <div>
+                        <strong id="nombreHeaderEstudiante">Jessica Silva</strong>
+                        <p>Estudiante</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ===================================== -->
+        <!-- BIENVENIDA -->
+        <!-- ===================================== -->
+
+        <section class="bienvenida">
+
+            <div class="bienvenida-texto">
+
+                <span class="etiqueta">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Portal del estudiante
+                </span>
+
+                <h2>¡Hola, <span id="nombreBienvenidaEstudiante">Jessica</span>! 👋</h2>
+
+                <p>
+                    Bienvenida a tu biblioteca virtual. Busca libros,
+                    revisa tus préstamos y descubre nuevos contenidos
+                    para continuar aprendiendo.
+                </p>
+
+                <a href="buscar_libros.html?perfil=estudiante" class="btn-buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Buscar libros
+                </a>
+
+            </div>
+
+            <div class="bienvenida-icono">
+                <i class="fa-solid fa-book-open-reader"></i>
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- TARJETAS DE INFORMACIÓN -->
+        <!-- ===================================== -->
+
+        <section class="estadisticas">
+
+            <div class="tarjeta">
+
+                <div class="icono azul">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div>
+                    <p>Libros disponibles</p>
+                    <h3 id="librosDisponiblesEstudiante">245</h3>
+                </div>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono verde">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div>
+                    <p>Mis préstamos</p>
+                    <h3 id="prestamosEstudiante">3</h3>
+                </div>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono naranja">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div>
+                    <p>Por devolver</p>
+                    <h3 id="porDevolverEstudiante">2</h3>
+                </div>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono morado">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div>
+                    <p>Favoritos</p>
+                    <h3 id="historialEstudiante">8</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- MIS PRÉSTAMOS -->
+        <!-- ===================================== -->
+
+        <section class="seccion" id="misSolicitudes">
+            <div class="titulo-seccion"><div><h2>Mis solicitudes de préstamo</h2><p>Revisa el estado de tus solicitudes y la fecha de recojo en biblioteca.</p></div><a href="buscar_libros.html?perfil=estudiante">Solicitar préstamo</a></div>
+            <div class="tabla-contenedor"><table><thead><tr><th>Solicitud</th><th>Libro</th><th>Fecha solicitud</th><th>Fecha recojo</th><th>Estado</th></tr></thead><tbody id="tablaSolicitudesEstudiante" aria-live="polite"></tbody></table></div>
+        </section>
+        <section class="seccion" id="misPrestamos">
+
+            <div class="titulo-seccion">
+
+                <div>
+                    <h2>Mis préstamos actuales</h2>
+                    <p>Libros que tienes actualmente en préstamo.</p>
+                </div>
+
+                <a href="#misSolicitudes">Ver mis solicitudes</a>
+
+            </div>
+
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Libro</th>
+                            <th>Fecha préstamo</th>
+                            <th>Fecha devolución</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaPrestamosEstudiante">
+
+                        <tr>
+
+                            <td>
+                                <div class="libro-tabla">
+                                    <div class="mini-libro">
+                                        <i class="fa-solid fa-book"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Programación Web</strong>
+                                        <p>Desarrollo de aplicaciones web</p>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>20/08/2026</td>
+
+                            <td>30/08/2026</td>
+
+                            <td>
+                                <span class="estado vigente">
+                                    Vigente
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <div class="libro-tabla">
+
+                                    <div class="mini-libro">
+                                        <i class="fa-solid fa-book"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Base de Datos</strong>
+                                        <p>Fundamentos de MySQL</p>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>18/08/2026</td>
+
+                            <td>28/08/2026</td>
+
+                            <td>
+                                <span class="estado proximo">
+                                    Por devolver
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- LIBROS RECOMENDADOS -->
+        <!-- ===================================== -->
+
+        <section class="seccion">
+
+            <div class="titulo-seccion">
+
+                <div>
+                    <h2>Libros recomendados</h2>
+                    <p>Explora algunos libros disponibles en nuestra biblioteca.</p>
+                </div>
+
+                <a href="buscar_libros.html?perfil=estudiante">Ver más</a>
+
+            </div>
+
+
+            <div class="contenedor-libros">
+
+                <!-- LIBRO 1 -->
+
+                <div class="libro-card">
+
+                    <div class="portada portada1">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div class="info-libro">
+
+                        <span class="categoria">Programación</span>
+
+                        <h3>Programación Web</h3>
+
+                        <p>Introducción al desarrollo de páginas y aplicaciones web.</p>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                        <button>
+                            <i class="fa-solid fa-eye"></i>
+                            Ver libro
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LIBRO 2 -->
+
+                <div class="libro-card">
+
+                    <div class="portada portada2">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <div class="info-libro">
+
+                        <span class="categoria">Base de Datos</span>
+
+                        <h3>Fundamentos de MySQL</h3>
+
+                        <p>Aprende los principales conceptos sobre bases de datos.</p>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                        <button>
+                            <i class="fa-solid fa-eye"></i>
+                            Ver libro
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LIBRO 3 -->
+
+                <div class="libro-card">
+
+                    <div class="portada portada3">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <div class="info-libro">
+
+                        <span class="categoria">Tecnología</span>
+
+                        <h3>Arquitectura de Computadoras</h3>
+
+                        <p>Conoce los componentes y funcionamiento de una computadora.</p>
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                        <button>
+                            <i class="fa-solid fa-eye"></i>
+                            Ver libro
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LIBRO 4 -->
+
+                <div class="libro-card">
+
+                    <div class="portada portada4">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+
+                    <div class="info-libro">
+
+                        <span class="categoria">Redes</span>
+
+                        <h3>Redes de Computadoras</h3>
+
+                        <p>Conceptos fundamentales sobre redes y conectividad.</p>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                        <button>
+                            <i class="fa-solid fa-eye"></i>
+                            Ver libro
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../js/catalogo_portadas.js"></script>
+    <script src="../js/catalogo_actual.js"></script>
+    <script src="../js/codigos_solicitud.js"></script>
+    <script src="../js/dashboard_estudiante.js"></script>
+</body>
+
+</html>

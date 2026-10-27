@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamos solicitados | Biblioteca CMVO</title>
+    <link rel="stylesheet" href="../css/lista_prestamos.css">
+    <link rel="stylesheet" href="../css/prestamos_solicitados.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="pagina">
+    <aside class="sidebar">
+        <div class="marca"><img src="../img/logo.jpeg" alt="Logo"><div><strong>Biblioteca</strong><span>CMVO</span></div></div>
+        <nav class="menu">
+            <div class="menu-titulo">PANEL PRINCIPAL</div>
+            <a href="dashboard_administrador.html">🏠 <span>Panel principal</span></a>
+            <div class="menu-titulo seccion">GESTIÓN</div>
+            <a href="libros.html">📚 <span>Libros</span></a>
+            <a class="sub" href="nuevo_libro.html">＋ <span>Registrar libro</span></a>
+            <a href="usuarios.html">👥 <span>Usuarios</span></a>
+            <a class="sub" href="registrar_usuario.html">● <span>Registrar usuario</span></a>
+            <a class="sub" href="lista_estudiantes.html">● <span>Lista de estudiantes</span></a>
+            <a class="sub" href="lista_docentes.html">● <span>Lista de docentes</span></a>
+            <a class="sub" href="prestamo_usuario_externo.html?tipo=administrativo">● <span>Personal administrativo</span></a>
+            <a class="activo" href="prestamos.html">📖 <span>Préstamos</span></a>
+            <a class="sub" href="registrar_prestamo.html">● <span>Registrar préstamo</span></a>
+            <a class="sub" href="lista_prestamos.html">● <span>Lista de préstamos</span></a>
+            <a class="sub activo" href="prestamos_solicitados.html">● <span>Préstamos solicitados</span></a>
+            <a href="devoluciones.html">↩️ <span>Devoluciones</span></a>
+            <div class="menu-titulo seccion">INFORMACIÓN</div>
+            <a href="reportes.html">📊 <span>Reportes</span></a>
+            <a href="prestamos_por_vencer.html">⚠️ <span>Préstamos por vencer</span></a>
+            <a href="#">💻 <span>Aula virtual</span></a>
+        </nav>
+        <a class="cerrar" href="login_administrador.html">🚪 &nbsp; Cerrar sesión</a>
+    </aside>
+
+    <main>
+        <header class="hero"><div><h1>Préstamos solicitados</h1><p>Revisa las solicitudes enviadas y autoriza el recojo del libro.</p></div><div class="perfil"><div class="avatar">👤</div><div><strong>Administrador</strong><small>Biblioteca</small></div></div></header>
+        <div class="migas">⌂ &nbsp; Panel principal &nbsp;›&nbsp; Préstamos &nbsp;›&nbsp; <strong>Préstamos solicitados</strong></div>
+
+        <section class="resumen">
+            <div class="tarjeta"><span>Total de solicitudes</span><strong id="totalSolicitudes">0</strong></div>
+            <div class="tarjeta"><span>Pendientes de revisión</span><strong id="totalPendientes">0</strong></div>
+            <div class="tarjeta"><span>Aprobadas para recojo</span><strong id="totalAprobadas">0</strong></div>
+            <div class="tarjeta"><span>Resultados mostrados</span><strong id="totalResultados">0</strong></div>
+        </section>
+
+        <section class="panel">
+            <div class="encabezado"><div><h2>📚 &nbsp; Solicitudes recibidas</h2><p>Las solicitudes aprobadas quedarán listas para que el usuario recoja su ejemplar.</p></div></div>
+            <div class="filtros filtros-solicitudes">
+                <div class="busqueda"><i class="fa-solid fa-magnifying-glass"></i><input id="buscarSolicitud" type="search" placeholder="Buscar por docente, estudiante o libro..."></div>
+                <select id="filtroTipo"><option value="">Todos los usuarios</option><option>Docente</option><option>Estudiante</option></select>
+                <select id="filtroEstado"><option value="">Todos los estados</option><option>Pendiente</option><option>Aprobada</option></select>
+            </div>
+            <p class="mensaje-gestion" id="mensajeGestion" aria-live="polite"></p>
+            <div class="tabla"><table><thead><tr><th>CÓDIGO</th><th>USUARIO</th><th>TIPO</th><th>PROGRAMA DE ESTUDIOS</th><th>SEMESTRE</th><th>LIBRO</th><th>FECHA SOLICITUD</th><th>FECHA RECOJO</th><th>MOTIVO</th><th>ESTADO</th><th>ACCIÓN</th></tr></thead><tbody id="tablaSolicitudes"></tbody></table></div>
+        </section>
+    </main>
+</div>
+<script src="../js/menu_desplegable.js"></script>
+<script src="../js/codigos_solicitud.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/prestamos_solicitados.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Estudiante | Biblioteca CMVO</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <main class="login-page">
+        <section class="lado-institucional">
+            <div class="contenido-institucional">
+                <img src="../img/logo.jpeg" alt="Logo IESTP Contralmirante Manuel Villar Olivera" class="logo-login">
+                <span class="etiqueta">IESTP CMVO</span>
+                <h1>Sistema de Gestión <span>Bibliotecaria</span></h1>
+                <p>Plataforma institucional para consultar libros, revisar préstamos y acceder a los servicios de la biblioteca.</p>
+                <div class="beneficios">
+                    <div><span>🔎</span><div><strong>Consulta de libros</strong><small>Busca material bibliográfico disponible</small></div></div>
+                    <div><span>📖</span><div><strong>Mis préstamos</strong><small>Revisa tus préstamos y fechas de devolución</small></div></div>
+                    <div><span>🎓</span><div><strong>Acceso estudiantil</strong><small>Información bibliográfica para tu formación</small></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lado-login">
+            <div class="caja-login">
+                <div class="encabezado-formulario">
+                    <div class="icono-admin">🎓</div>
+                    <span class="tipo-acceso">ACCESO ESTUDIANTE</span>
+                    <h2>Bienvenido</h2>
+                    <p>Ingresa tus credenciales para acceder al panel del estudiante.</p>
+                </div>
+
+                <form id="formLoginEstudiante" autocomplete="off">
+                    <div class="grupo">
+                        <label for="usuarioEstudiante">Usuario</label>
+                        <div class="campo"><span class="icono-campo">👤</span><input type="text" id="usuarioEstudiante" name="usuario_estudiante" placeholder="Ingrese su usuario" autocomplete="off" required></div>
+                    </div>
+                    <div class="grupo">
+                        <label for="passwordEstudiante">Contraseña</label>
+                        <div class="campo"><span class="icono-campo">🔒</span><input type="password" id="passwordEstudiante" name="password_estudiante" placeholder="Ingrese su contraseña" autocomplete="new-password" required><button type="button" class="ver-password" id="mostrarPasswordEstudiante" aria-label="Mostrar contraseña">👁</button></div>
+                    </div>
+                    <div class="opciones"><label><input type="checkbox" id="recordarEstudiante"> Recordarme</label><a href="#">¿Olvidaste tu contraseña?</a></div>
+                    <p id="mensajeErrorEstudiante" class="mensaje-error"></p>
+                    <button type="submit" class="btn-login">Iniciar sesión <span>→</span></button>
+                </form>
+
+                <div class="seguridad">🔒 Acceso seguro al Sistema de Biblioteca</div>
+                <a href="../index.html" class="volver">← Volver a selección de acceso</a>
+            </div>
+        </section>
+    </main>
+    <footer>© 2026 IESTP Contralmirante Manuel Villar Olivera · Zorritos - Tumbes</footer>
+    <script src="../js/login_estudiante.js"></script>
+</body>
+</html>

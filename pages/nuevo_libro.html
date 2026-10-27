@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar libro | Biblioteca CMVO</title>
+    <link rel="stylesheet" href="../css/registrar_libro.css">
+</head>
+<body>
+<div class="pagina">
+    <aside class="sidebar">
+        <div class="marca"><img src="../img/logo.jpeg" alt="Logo"><div><strong>Biblioteca</strong><span>CMVO</span></div></div>
+        <nav class="menu">
+            <div class="menu-titulo">PANEL PRINCIPAL</div><a href="dashboard_administrador.html">🏠 <span>Panel principal</span></a>
+            <div class="menu-titulo seccion">GESTIÓN</div>
+            <a class="activo" href="libros.html">📚 <span>Libros</span></a><a class="sub activo" href="nuevo_libro.html">● <span>Registrar libro</span></a>
+            <a href="usuarios.html">👥 <span>Usuarios</span></a><a class="sub" href="registrar_usuario.html">● <span>Registrar usuario</span></a><a class="sub" href="lista_estudiantes.html">● <span>Lista de estudiantes</span></a><a class="sub" href="lista_docentes.html">● <span>Lista de docentes</span></a><a class="sub" href="prestamo_usuario_externo.html?tipo=administrativo">● <span>Personal administrativo</span></a>
+            <a href="prestamos.html">📖 <span>Préstamos</span></a><a class="sub" href="registrar_prestamo.html">● <span>Registrar préstamo</span></a><a class="sub" href="lista_prestamos.html">● <span>Lista de préstamos</span></a><a class="sub" href="prestamos_solicitados.html">● <span>Préstamos solicitados</span></a>
+            <a href="devoluciones.html">↩️ <span>Devoluciones</span></a>
+            <div class="menu-titulo seccion">INFORMACIÓN</div><a href="reportes.html">📊 <span>Reportes</span></a><a href="prestamos_por_vencer.html">⚠️ <span>Préstamos por vencer</span></a><a href="#">💻 <span>Aula virtual</span></a>
+        </nav>
+        <a class="cerrar" href="login_administrador.html">🚪 &nbsp; Cerrar sesión</a>
+    </aside>
+
+    <main>
+        <header class="hero"><div><h1>Registrar libro</h1><p>Incorpora un nuevo título y sus ejemplares al inventario bibliográfico institucional.</p></div><div class="perfil"><div class="avatar">👤</div><div><strong>Administrador</strong><small>Biblioteca</small></div></div></header>
+        <div class="migas">⌂ &nbsp; Panel principal &nbsp;›&nbsp; Libros &nbsp;›&nbsp; <strong>Registrar libro</strong></div>
+
+        <div class="contenido">
+            <section class="panel formulario-panel">
+                <div class="titulo"><span>📚</span><div><h2>Datos bibliográficos</h2><p>Complete la información necesaria para identificar y localizar el material.</p></div></div>
+                <div id="mensajeLibro" class="mensaje"></div>
+                <form id="formLibro">
+                    <div class="bloque bibliografico"><h3>📖 Información del libro</h3><div class="campos">
+                        <div class="campo campo-doble"><label for="titulo">Título del libro <span>*</span></label><input id="titulo" required maxlength="150" placeholder="Ingrese el título completo"></div>
+                        <div class="campo"><label for="autor">Autor <span>*</span></label><input id="autor" required maxlength="100" placeholder="Apellidos y nombres"></div>
+                        <div class="campo"><label for="anio">Año de publicación <span>*</span></label><input id="anio" type="number" required min="1500" max="2100" placeholder="Ej. 2024"></div>
+                        <div class="campo"><label for="editorial">Editorial</label><input id="editorial" maxlength="80" placeholder="Ingrese editorial"></div>
+                        <div class="campo"><label for="edicion">Edición</label><input id="edicion" maxlength="30" placeholder="Ej. Segunda edición"></div>
+                        <div class="campo"><label for="isbn">ISBN</label><input id="isbn" maxlength="20" placeholder="Ingrese ISBN"></div>
+                    </div></div>
+
+                    <div class="bloque catalogacion"><h3>🏷️ Catalogación e inventario</h3><div class="campos">
+                        <div class="campo"><label for="codigo">Código de clasificación <span>*</span></label><input id="codigo" required maxlength="30" placeholder="Clasificación Decimal Dewey"></div>
+                        <div class="campo"><label for="categoria">Categoría o sección <span>*</span></label><select id="categoria" required><option value="">Seleccione...</option><option>Arquitectura de Plataformas y Servicios de TI</option><option>Acuicultura y Procesamiento Pesquero</option><option>Mecánica Automotriz</option><option>Enfermería Técnica</option><option>Formación general</option><option>Referencia</option><option>Otros</option></select></div>
+                        <div class="campo"><label for="ejemplares">Cantidad de ejemplares <span>*</span></label><input id="ejemplares" type="number" required min="1" max="999" value="1"></div>
+                        <div class="campo"><label for="ubicacion">Ubicación física <span>*</span></label><input id="ubicacion" required maxlength="60" placeholder="Ej. Sección A, estante 03"></div>
+                        <div class="campo"><label for="adquisicion">Forma de adquisición <span>*</span></label><select id="adquisicion" required><option value="">Seleccione...</option><option>Recursos propios</option><option>Donación</option></select></div>
+                        <div class="campo"><label for="procedencia">Procedencia</label><input id="procedencia" maxlength="100" placeholder="Institución, persona donante o proveedor"></div>
+                        <div class="campo"><label for="modalidad">Modalidad de consulta <span>*</span></label><select id="modalidad" required><option value="Préstamo externo">Préstamo externo</option><option value="Consulta interna">Solo consulta interna</option></select></div>
+                        <div class="campo"><label for="estado">Estado inicial <span>*</span></label><select id="estado" required><option>Disponible</option><option>En catalogación</option><option>En reparación</option></select></div>
+                    </div></div>
+
+                    <div class="bloque descripcion"><h3>📝 Descripción</h3><div class="campo"><label for="resumen">Introducción o resumen del contenido</label><textarea id="resumen" maxlength="600" placeholder="Escriba una breve descripción que ayude al usuario a conocer el contenido del libro..."></textarea><small><span id="contadorResumen">0</span>/600 caracteres</small></div></div>
+                    <div class="acciones"><button class="boton secundario" type="reset">← Limpiar</button><div><a class="boton secundario" href="dashboard_administrador.html">✕ Cancelar</a><button class="boton principal" type="submit">💾 Registrar libro</button></div></div>
+                </form>
+            </section>
+
+            <aside class="lateral">
+                <section class="panel portada-panel"><h2>🖼️ Portada del libro</h2><div id="portadaPrevia" class="portada-previa">📖</div><label class="seleccionar-portada" for="portada">Seleccionar portada</label><input id="portada" type="file" accept="image/jpeg,image/png"><p>Formatos JPG o PNG. Tamaño máximo 2 MB.</p></section>
+                <section class="panel ayuda"><h2>ℹ️ Datos importantes</h2><ul><li>El código de clasificación debe ser único.</li><li>Registre la cantidad total de ejemplares físicos.</li><li>Indique si fue adquirido con recursos propios o mediante donación.</li><li>Los tomos de gran tamaño pueden marcarse como consulta interna.</li><li>La ubicación debe permitir encontrar rápidamente el libro.</li></ul></section>
+                <section class="panel disponibilidad"><h2>✅ Disponibilidad inicial</h2><p>Los ejemplares se registrarán inicialmente según el estado seleccionado.</p><strong id="resumenEjemplares">1 ejemplar</strong></section>
+            </aside>
+        </div>
+
+        <section class="panel recientes"><div><h2>🕘 Libros registrados recientemente</h2><p>Últimos títulos incorporados al inventario.</p></div><div class="tabla"><table><thead><tr><th>CÓDIGO</th><th>TÍTULO</th><th>AUTOR</th><th>CATEGORÍA</th><th>EJEMPLARES</th><th>DISPONIBLES</th><th>ADQUISICIÓN</th><th>ESTADO</th></tr></thead><tbody id="tablaLibros"></tbody></table></div></section>
+    </main>
+</div>
+<script src="../js/menu_desplegable.js"></script>
+<script src="../js/catalogo_portadas.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/libros.js"></script>
+</body>
+</html>
+
